@@ -1,0 +1,43 @@
+import java.util.Scanner;
+
+public class CurrencyExchange {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+
+        double usdRate = 0.012;   // 1 INR = 0.012 USD(Dollor)
+        double eurRate = 0.011;   // 1 INR = 0.011 EUR(Euro)
+        double gbpRate = 0.0096;  // 1 INR = 0.0096 GBP(Pound)
+        double jpyRate = 1.75;    // 1 INR = 1.75 JPY(Yen)
+
+        System.out.print("Enter amount in INR: ");
+        double inr = sc.nextDouble();
+
+        System.out.println("Choose currency to convert to:");
+        System.out.println("1. USD");
+        System.out.println("2. EUR");
+        System.out.println("3. GBP");
+        System.out.println("4. JPY");
+        System.out.print("Enter choice (1-4): ");
+        int choice = sc.nextInt();
+
+        double result;
+
+        if (choice == 1) {
+            result = inr * usdRate;
+            System.out.println(inr + " INR = " + result + " USD");
+        } else if (choice == 2) {
+            result = inr * eurRate;
+            System.out.println(inr + " INR = " + result + " EUR");
+        } else if (choice == 3) {
+            result = inr * gbpRate;
+            System.out.println(inr + " INR = " + result + " GBP");
+        } else if (choice == 4) {
+            result = inr * jpyRate;
+            System.out.println(inr + " INR = " + result + " JPY");
+        } else {
+            System.out.println("Invalid choice!");
+        }
+
+        sc.close();
+    }
+}
